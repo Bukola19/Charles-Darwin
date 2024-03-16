@@ -16,11 +16,11 @@ n_gc=$(grep -o "[GC]" p53.fasta | wc -l)
 total_length=$(grep -v "^>" p53.fasta | tr -d "\n" | wc -c)
 gc_content=$(echo "scale=2; ($n_gc / $total_length) * 100" | bc)
 echo "Percentage of GC is: $gc_content%"
-touch Abner.fasta
-nano Abner.fasta
-echo "Number of A: $(grep -o 'A' Abner.fasta | wc -l)" >> Abner.fasta
-echo "Number of A: $(grep -o 'A' Abner.fasta | wc -l)" >> Abner.fasta
-echo "Number of G: $(grep -o 'G' Abner.fasta | wc -l)" >> Abner.fasta
-echo "Number of T: $(grep -o 'T' Abner.fasta | wc -l)" >> Abner.fasta
-echo "Number of C: $(grep -o 'C' Abner.fasta | wc -l)" >> Abner.fasta
+touch Abner.fna
+echo "Number of A: $(tail -n +2 p53.fasta | grep -o -i 'A' | wc -l)" >> Abner.fna
+echo "Number of A: $(tail -n +2 p53.fasta | grep -o -i 'A' | wc -l)" >> Abner.fna
+echo "Number of G: $(tail -n +2 p53.fasta | grep -o -i 'G' | wc -l)" >> Abner.fna
+echo "Number of T: $(tail -n +2 p53.fasta | grep -o -i 'T' | wc -l)" >> Abner.fna
+echo "Number of C: $(tail -n +2 p53.fasta | grep -o -i 'C' | wc -l)" >> Abner.fna
+nano Abner.fna
 history > Abner.sh
