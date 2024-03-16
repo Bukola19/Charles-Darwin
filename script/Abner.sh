@@ -19,8 +19,8 @@ echo "Percentage of GC is: $gc_content%"
 touch Abner.fasta
 nano Abner.fasta
 echo "Number of A: $(grep -o 'A' Abner.fasta | wc -l)" >> Abner.fasta
-echo "Number of A: $(grep -o 'A' Abner.fasta | wc -l)"
-echo "Number of G: $(grep -o 'G' Abner.fasta | wc -l)"
-echo "Number of T: $(grep -o 'T' Abner.fasta | wc -l)"
-echo "Number of C: $(grep -o 'C' Abner.fasta | wc -l)"
+echo "Number of A: $(grep -o 'A' Abner.fasta | wc -l)" >> Abner.fasta
+echo "Number of G: $(grep -o 'G' Abner.fasta | wc -l)" >> Abner.fasta
+echo "Number of T: $(grep -o 'T' Abner.fasta | wc -l)" >> Abner.fasta
+echo "Number of C: $(grep -o 'C' Abner.fasta | wc -l)" >> Abner.fasta
 history > Abner.sh
