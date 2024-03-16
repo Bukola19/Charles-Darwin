@@ -1,4 +1,4 @@
->gi|142022655|gb|EQ086233.1|304 marine metagenome JCVI_SCAF_1096627390048 genomic scaffold, whole genome shotgun sequence
+>gi|142022655|gb|EQ086233.1|304 marine metagenome
 CGCGATCCAGTAGCGCTTGTAGCCGAGCGCTTCGGCACGCTTCGCGAGCGCGATCGTGAAATTCAGTGCG
 TCGTGCGCGCTCGCCCCTTCTGCAATCGGGCTTTTGTCGAGAATCGAAAGGGAATAAGACATGAAGCTCA
 ACCTTTTAGAACGGCTGACCCGCCGGCACGAAGCGGCGTCCGGCGGGTGCCGATACAGCGGAAAACACCG
@@ -16,18 +16,6 @@ GGCCGCGGCGCCCGACGCAGTTCCGCCAAGAACGATCCGGTTGCGGATATTGATCTGGTACGCGTCGATC
 GTCAGCTGCAGGTTGCGAACGGGATTGAGCACCAATCCGAAGTTGTAGCTGGTCGACTGCTCCGGCTTCA
 GCGCCTGCGCGCCGATCAGGCGCGCGCCGGGCGACGTCGTTGCCAGGATGCCGCCCACGGAGGCCGGCGA
 CGTCGTCACGCTGGTATAGGACTCCTGGGCC
-
-# Count A and add to the file
-echo "Number of A: $(grep -o 'A' Abner.fasta | wc -l)" >> Abner.fasta
-
-# Count G and add to the file
-echo "Number of G: $(grep -o 'G' Abner.fasta | wc -l)" >> Abner.fasta
-
-# Count T and add to the file
-echo "Number of T: $(grep -o 'T' Abner.fasta | wc -l)" >> Abner.fasta
-
-# Count C and add to the file
-echo "Number of C: $(grep -o 'C' Abner.fasta | wc -l)" >> Abner.fasta
 
 Number of A: 214
 Number of G: 361
