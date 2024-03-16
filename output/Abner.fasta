@@ -17,16 +17,16 @@ GTCAGCTGCAGGTTGCGAACGGGATTGAGCACCAATCCGAAGTTGTAGCTGGTCGACTGCTCCGGCTTCA
 GCGCCTGCGCGCCGATCAGGCGCGCGCCGGGCGACGTCGTTGCCAGGATGCCGCCCACGGAGGCCGGCGA
 CGTCGTCACGCTGGTATAGGACTCCTGGGCC
 
-# Contar el número de A y añadirlo al archivo
+# Count A and add to the file
 echo "Number of A: $(grep -o 'A' Abner.fasta | wc -l)" >> Abner.fasta
 
-# Contar el número de G y añadirlo al archivo
+# Count G and add to the file
 echo "Number of G: $(grep -o 'G' Abner.fasta | wc -l)" >> Abner.fasta
 
-# Contar el número de T y añadirlo al archivo
+# Count T and add to the file
 echo "Number of T: $(grep -o 'T' Abner.fasta | wc -l)" >> Abner.fasta
 
-# Contar el número de C y añadirlo al archivo
+# Count C and add to the file
 echo "Number of C: $(grep -o 'C' Abner.fasta | wc -l)" >> Abner.fasta
 
 Number of A: 214
