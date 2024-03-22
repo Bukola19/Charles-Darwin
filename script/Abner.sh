@@ -43,4 +43,31 @@ $ echo "Number of A: $(grep -o 'A' Abner.fasta | wc -l)" >> Abner.fasta
 $ echo "Number of G: $(grep -o 'G' Abner.fasta | wc -l)" >> Abner.fasta
 $ echo "Number of T: $(grep -o 'T' Abner.fasta | wc -l)" >> Abner.fasta
 $ echo "Number of C: $(grep -o 'C' Abner.fasta | wc -l)" >> Abner.fasta
+#PART 2
+#Question 1
+$ conda activate base
+#Question 2
+$ conda create –name funtools
+#Question 3
+$ conda activate funtools
+#Question 4
+$ conda install tsnyder::figlet
+#Question 5
+$ figlet {Abner}
+#Question 6
+$ conda install -c bioconda bwa
+#Question 7
+$ conda install -c bioconda blast
+#Question 8
+$ conda install -c bioconda samtools
+#Question 9
+$ conda install -c bioconda bedtools
+#Question 10
+$ conda install -c bioconda spades
+#Question 11
+$ conda install -c bioconda bcftools
+#Question 12
+$ conda install -c bioconda fastp
+#Question 13
+$ conda install -c bioconda multiqc
 
