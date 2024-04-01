@@ -1,0 +1,8 @@
+# requirements.txt
+
+FastQC
+FastP
+BWA
+Samtools
+BCFtools
+
