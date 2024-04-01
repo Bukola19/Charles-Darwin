@@ -1,0 +1,7 @@
+PC Requirement
+- Hardware
+  - RAM: >=8GB
+  - Cores: >=8
+- Software
+  - Linux/MacOS
+  - Anaconda/miniconda
