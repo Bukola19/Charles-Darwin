@@ -4,4 +4,4 @@ PC Requirement
   - Cores: >=8
 - Software
   - Linux/MacOS
-  - Mminiconda: if you want to use the Anaconda distribution, you should change the miniconda in line 2 of the script.sh to anaonda
+  - Mminiconda: if you want to use the Anaconda distribution, you should change the miniconda in line 2 of the script.sh to anaconda
