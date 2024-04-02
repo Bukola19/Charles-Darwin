@@ -1,0 +1,8 @@
+#Requirements
+Conda
+fastqc
+multiqc
+fastp
+bwa
+samtools
+bcftools
