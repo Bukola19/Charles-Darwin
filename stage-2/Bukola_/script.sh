@@ -12,7 +12,7 @@ ls-lh
 # view the content of the zipped file
 zcat ERR8774458_1.fastq.gz | less -S
 # change the directory to the ref folder
-cd ref
+cd Ref
 # download the reference sequence
 wget https://zenodo.org/records/10886725/files/Reference.fasta
 # Activate the conda env
