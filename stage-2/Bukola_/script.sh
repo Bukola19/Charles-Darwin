@@ -4,7 +4,7 @@ mkdir PROJECT3 && cd PROJECT3
 # make new directories Data, Ref, results and change to the Data directory
 mkdir Data Ref Results && cd Data
 # Download the forward strand
-wget https://zenodo.org/records/10426436/files/ERR8774458_1.fastq.gz 
+wget https://zenodo.org/records/10426436/files/ERR8774458_1.fastq.gz
 # Download the reverse strand
 wget https://zenodo.org/records/10426436/files/ERR8774458_2.fastq.gz
 # list the files and check the size
