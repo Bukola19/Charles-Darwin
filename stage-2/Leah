@@ -1,0 +1,7 @@
+requirement.txt
+fastqc
+fastp
+bwa
+samtools
+freebayes
+bcftools
