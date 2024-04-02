@@ -1,1 +1,8 @@
+requirement.txt( tools used in executing task)
+Fastqc
+Fastp
+bwa
+samtools
+freebayes
+bcftools
 
