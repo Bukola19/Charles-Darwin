@@ -46,3 +46,10 @@ bwa mem Reference.fasta ~/PROJECT3/Results/trimmed_ERR8774458_1.fastq.gz ~/PROJE
 cd ../
 conda install -c bioconda samtools
 cd .. && cd Results
+samtools view -hbo mapped.bam mapped.sam
+samtools sort mapped.bam -o mapped.sorted.bam
+# Variant Calling
+bcftools mpileup -Ou -f ~/PROJECT3/Ref/Reference.fasta mapped.sorted.bam | bcftools call -mv -Ob -o variants.bcf
+cd ..
+# To view all the Data generated 
+ls -lh ~/PROJECT3/Data/ ~/PROJECT3/Ref ~/PROJECT3/Results/
