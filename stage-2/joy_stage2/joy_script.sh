@@ -10,8 +10,8 @@ mkdir data data/fastq data/ref BAMS SAM VCF data/fastq/trimmed_reads
 #downloading datasets using wget
 wget -P data/fastq https://zenodo.org/records/10426436/files/ERR8774458_1.fastq.gz \
                    https://zenodo.org/records/10426436/files/ERR8774458_2.fastq.gz
-
-
+#to check the downloaded data size and content
+ls -lh
 
 #to perform fastqc for the datasets
 fastqc data/fastq/*.fastq.gz
