@@ -24,9 +24,6 @@ conda install bioconda::bwa
 #to install samtools for 
 conda install bioconda/label/cf201901::samtools
 
-#to install freebayes for finding snps,indel etc
- conda install bioconda/label/cf201901::freebayes
-
 #to install bcftools for manipulating variant calling iwth vcf and bcf
  conda install bioconda/label/cf201901::bcftools
 
