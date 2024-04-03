@@ -1,7 +1,7 @@
 
 
 #!/bin/bash
-source ~/miniconda3/etc/profile.d/conda.sh
+source ~/anaconda3/etc/profile.d/conda.sh
 conda activate joy_stage2
 
 #set up various directories for the output
