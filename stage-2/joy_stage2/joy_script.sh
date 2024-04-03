@@ -17,8 +17,6 @@ ls -lh
 #to perform fastqc for the datasets
 fastqc data/fastq/*.fastq.gz
 
-#to generate summary of fastq report
-multiqc data/fastq/*_fastqc.zip
 
 #to trim the fastq files
 fastp  -i data/fastq/ERR8774458_1.fastq.gz -I data/fastq/ERR8774458_2.fastq.gz -o data/fastq/trimmed_reads/ERR8774458_1.fastq.gz -O data/fastq/trimmed_reads/ERR8774458_2.fastq.gz --html data/fastq/trimmed_reads/ERR8774458_fastp.html --json data/fastq/trimmed_reads/ERR8774458_fastp.json
