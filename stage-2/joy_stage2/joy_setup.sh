@@ -12,8 +12,6 @@ conda activate joy_stage2
 #to install fastqc for quality control
 conda install bioconda::fastqc
 
-#to install multiqc for creating summmary of qc reports from multiple samples
-conda install -c bioconda multiqc
 
 #to install fastp for trimming reads
 conda install bioconda/label/cf201901::fastp
@@ -24,7 +22,7 @@ conda install bioconda::bwa
 #to install samtools for 
 conda install bioconda/label/cf201901::samtools
 
-#to install bcftools for manipulating variant calling iwth vcf and bcf
+#to install bcftools for manipulating variant calling with vcf and bcf
  conda install bioconda/label/cf201901::bcftools
 
 
