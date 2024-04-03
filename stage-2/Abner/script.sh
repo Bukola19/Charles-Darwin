@@ -1,4 +1,5 @@
 #!/bin/bash
+#Abner's script
 mkdir -p data
 data_dir="data"
 SAMPLES=(
