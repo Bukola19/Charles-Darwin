@@ -1,0 +1,9 @@
+Tools that I used:
+
+fastqc
+multiqc
+bbtools
+fastp
+bwa
+samtools
+bcftools
