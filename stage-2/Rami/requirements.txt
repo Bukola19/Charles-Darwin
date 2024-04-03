@@ -1,8 +1,0 @@
-Tools that I used:
-
-fastqc
-multiqc
-fastp
-bwa
-samtools
-bcftools
