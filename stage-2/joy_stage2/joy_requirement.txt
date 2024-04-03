@@ -1,6 +1,5 @@
 #list of tools for NGS
 fastqc
-multiqc
 fastp
 bwa
 samtools
