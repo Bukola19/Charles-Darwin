@@ -35,4 +35,4 @@ samtools index map_output/mapping_filtered.sorted.bam
 mkdir VCF
 bcftools mpileup -Ou -f ref/ref_genome.fasta map_output/mapping_filtered.sorted.bam | bcftools call -mv -Ov -o VCF/variant_calling.vcf
 
-echo -e "\nThanks for using this pipeline! If you wish to run it again on another dataset, make sure you run in an appropiate directory to avoid overlapping output files."
+echo "Thanks for using this pipeline. If you wish to run it again on another dataset, make sure you run in a clear directory to avoid overlapping files"
