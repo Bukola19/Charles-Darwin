@@ -13,11 +13,14 @@ SAMPLES=(
 #DOWNLOAD DATA
 for sample in "${SAMPLES[@]}";do
     read1_url="https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/${sample}_R1.fastq.gz"
+    #one_dataset_read1_url="https://zenodo.org/records/10426436/files/ERR8774458_1.fastq.gz?download=1"
     read2_url="https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/${sample}_R2.fastq.gz"
+    #one_dataset_read2_url="https://zenodo.org/records/10426436/files/ERR8774458_2.fastq.gz?download=1"
     wget -P "${data_dir}" "$read1_url" "$read2_url" 
 done
 
 ref_url="https://raw.githubusercontent.com/josoga2/yt-dataset/main/dataset/raw_reads/reference.fasta"
+#one_dataset_ref_url="https://zenodo.org/records/10886725/files/Reference.fasta?download=1"
 wget -P "${data_dir}" "$ref_url"
 
 #QUALITY CONTROL
