@@ -83,9 +83,6 @@ seq_urls=(
   "https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Drysdale_R1.fastq.gz"
   "https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Drysdale_R2.fastq.gz"
 )
-# Index the reference genome for mapping (if not already indexed)
-    bwa index "$ref_name"
-    echo "Indexed reference genome for Genome mapping."
 
 # Loop through each sequence URL
 for url in "${seq_urls[@]}"; do
@@ -116,6 +113,10 @@ for url in "${seq_urls[@]}"; do
   -i "${name}_R1.fastq.gz" "${name}_R2.fastq.gz" -o "${name}_R1_trimmed.fastq.gz" -O "${name}_R2_trimmed.fastq.gz"
   echo "Trimming done for $name."
 
+
+# Index the reference genome for mapping
+    bwa index "$ref_name"
+    echo "Indexed reference genome for Genome mapping."
 # Genome Mapping
   bwa mem "$ref_name" "${name}_R1_trimmed.fastq.gz" "${name}_R2_trimmed.fastq.gz" > "$name"/GenMapping/"$name".sam
   samtools view -@ 20 -S -b "$name"/GenMapping/"$name".sam > "$name"/GenMapping/"$name".bam
