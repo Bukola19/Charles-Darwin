@@ -67,11 +67,9 @@ ref_url="https://raw.githubusercontent.com/josoga2/yt-dataset/main/dataset/raw_r
 ref_name="reference.fasta"
 
 # Download the reference genome if it's not already present
-if [ ! -f "$ref_name" ]; then
-    echo "Downloading reference genome..."
     wget -O "$ref_name" "$ref_url"
     echo "Downloaded reference genome."
-fi
+    
 # Define an array of sequence URLs
 seq_urls=(
   "https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/ACBarrie_R1.fastq.gz"
@@ -86,10 +84,8 @@ seq_urls=(
   "https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/Drysdale_R2.fastq.gz"
 )
 # Index the reference genome for mapping (if not already indexed)
-if [ ! -f "$ref_name".bwt ]; then
     bwa index "$ref_name"
     echo "Indexed reference genome for Genome mapping."
-fi
 
 # Loop through each sequence URL
 for url in "${seq_urls[@]}"; do
@@ -99,7 +95,7 @@ for url in "${seq_urls[@]}"; do
 
 # Download the dataset
   wget -O "${name}_R1.fastq.gz" "$url"
-  wget -O "${name}_R2.fastq.gz" "$(dirname "$url")/${name}_R2.fastq.gz"
+  wget -O "${name}_R2.fastq.gz" "$url"
   echo "Downloaded dataset for $name."  
 
  # Create directories for quality control and mapping
@@ -108,11 +104,11 @@ for url in "${seq_urls[@]}"; do
   echo "Created directories for quality control and mapping for $name."
   
 # Quality control for both R1 and R2 reads
-  fastqc "${name}_R1.fastq.gz" "${name}_R2.fastq.gz" -o "$name"/QC_Reports
+  fastqc "${name}_R1.fastq.gz" "${name}_R2.fastq.gz" -o "$name"/QCReports
   echo "Performed quality control for $name."
 
 # Summarize QC results
-  multiqc "$name"/QC_Reports
+  multiqc "$name"/QCReports
   echo "Summarized QC results for $name."
   
 # Trim using fastp
@@ -128,6 +124,9 @@ for url in "${seq_urls[@]}"; do
   echo "Genome mapping done for $name."
 
 # Variant calling using bcftools
-  bcftools mpileup -Ou -f "$ref_name" "$name"/GenMapping/"$name".sorted.bam | bcftools call -mv -Ov -o "$name"/"$name".vcf
+  samtools faidx "$ref_name"
+  bcftools mpileup -Ou -f "$ref_name" "$name"/GenMapping/"$name".sorted.bam | bcftools call -mv -Ob -o "$name"/"$name".bcf
+  bcftools view "$name"/"$name".bcf > "$name"/"$name.vcf
   echo "Variant calling done for $name."
-
+done
+  
