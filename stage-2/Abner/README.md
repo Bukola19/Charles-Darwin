@@ -1,5 +1,5 @@
-# Project: DNA Sequencing Analysis
-This project contains a Bash script designed to automate the analysis of DNA sequencing data. The script downloads sequencing data, performs quality control, trims sequences, maps the genome, and calls variants.
+# Project: NGS Pipeline
+This project contains a Bash script designed to download sequencing data, performs quality control, trims sequences, maps the genome, and calls variants.
 
 **Prerequisites**
 
@@ -27,17 +27,17 @@ bash script.sh
 
 ***The script will perform the following actions:***
 
-Data Download: Download DNA sequencing data files from a remote repository.
+1. Data Download: Download DNA sequencing data files from a remote repository.
 
-Quality Control and Trimming: Use fastp to perform quality control and trimming of DNA sequences.
+2. Quality Control and Trimming: Use fastp to perform quality control and trimming of DNA sequences.
 
-Genome Mapping: Use bwa to map the trimmed DNA sequences to the reference genome.
+3. Genome Mapping: Use bwa to map the trimmed DNA sequences to the reference genome.
 
-Variant Calling: Use bcftools to call variants from the mapped files.
+4. Variant Calling: Use bcftools to call variants from the mapped files.
 
 **Project Structure**
 
-script.sh: The main script that automates the DNA sequencing analysis.
+script.sh: The main script that automates the NGS pipeline.
 
 data/: Directory to store downloaded data files.
 
