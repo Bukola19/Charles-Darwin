@@ -27,9 +27,9 @@ bash script.sh
 
 ***The script will perform the following actions:***
 
-1. Data Download: Download DNA sequencing data files from a remote repository.
+1. Data Download: Download DNA sequencing data files and a reference genome from a remote repository.
 
-2. Quality Control and Trimming: Use fastp to perform quality control and trimming of DNA sequences.
+2. Quality Control and Trimming: Use fastqc to perform quality control and then fastp for trimming of DNA sequences.
 
 3. Genome Mapping: Use bwa to map the trimmed DNA sequences to the reference genome.
 
@@ -39,7 +39,7 @@ bash script.sh
 
 script.sh: The main script that automates the NGS pipeline.
 
-data/: Directory to store downloaded data files.
+data/: Directory to store downloaded data files, reference genome and trimmed fastq.gz files.
 
 fastqc_out/: Directory to store quality control results.
 
