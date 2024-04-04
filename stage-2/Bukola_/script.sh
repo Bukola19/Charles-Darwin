@@ -39,7 +39,7 @@ for url in "${seq_urls[@]}"; do
   echo "Created directories for quality control and mapping for $name."
   
 # Quality control for both R1 and R2 reads
- fastqc --threads 8 "${name}_R1.fastq.gz" "${name}_R2.fastq.gz" -o "$name"/QCReports
+ fastqc -i "${name}_R1.fastq.gz" "${name}_R2.fastq.gz" -o "$name"/QCReports
   echo "Performed quality control for $name."
 
 # Summarize QC results
@@ -47,7 +47,7 @@ for url in "${seq_urls[@]}"; do
   echo "Summarized QC results for $name."
   
 # Trim using fastp
-  fastp --thread 8 --detect_adapter_for_pe --cut_mean_quality 20 --length_required 50 --html report.html --json report.json -i "${name}_R1.fastq.gz" "${name}_R2.fastq.gz" -o "${name}_R1_trimmed.fastq.gz" -O "${name}_R2_trimmed.fastq.gz"
+  fastp -i "${name}_R1.fastq.gz" -I "${name}_R2.fastq.gz" -o "${name}_R1_trimmed.fastq.gz" -O "${name}_R2_trimmed.fastq.gz"
   echo "Trimming done for $name."
 
 # Index the reference genome for mapping
@@ -62,8 +62,6 @@ echo "Indexed reference genome for Genome mapping."
 
 # Variant calling using bcftools
   samtools faidx "$ref_name"
-  bcftools mpileup -Ou -f "$ref_name" "$name"/GenMapping/"$name".sorted.bam | bcftools call -mv -Ob -o "$name"/"$name".bcf
-  bcftools view "$name".bcf > "$name".vcf
+  bcftools mpileup -Ou -f "$ref_name" "$name"/GenMapping/"$name".sorted.bam | bcftools call -mv -Ov -mv > "$name".vcf
 
 done
-  
