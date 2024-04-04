@@ -3,22 +3,22 @@ This project contains a Bash script designed to automate the analysis of DNA seq
 
 **Prerequisites**
 Make sure you have the following programs installed on your system before running the script:
-wget for downloading data files.
-fastp for quality control and sequence trimming.
-bwa for genome mapping.
-samtools for handling SAM and BAM files.
-bcftools for variant calling.
+* wget for downloading data files.
++ fastp for quality control and sequence trimming.
+- bwa for genome mapping.
++ samtools for handling SAM and BAM files.
+* bcftools for variant calling.
 
 **Usage**
-Clone this repository to your system:
+***Clone this repository to your system:***
 git clone https://github.com/your_username/your_project.git
 
-Navigate to the project directory:
+***Navigate to the project directory:***
 cd your_project
 Run the bash script:
 bash script.sh
 
-The script will perform the following actions:
+***The script will perform the following actions:***
 
 Data Download: Download DNA sequencing data files from a remote repository.
 
