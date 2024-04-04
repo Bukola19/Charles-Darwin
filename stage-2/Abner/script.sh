@@ -14,9 +14,7 @@ SAMPLES=(
 for sample in "${SAMPLES[@]}";do
     read1_url="https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/${sample}_R1.fastq.gz"
     read2_url="https://github.com/josoga2/yt-dataset/raw/main/dataset/raw_reads/${sample}_R2.fastq.gz"
-    
-    wget -P "${data_dir}" "$read1_url"
-    wget -P "${data_dir}" "$read2_url" 
+    wget -P "${data_dir}" "$read1_url" "$read2_url" 
 done
 
 ref_url="https://raw.githubusercontent.com/josoga2/yt-dataset/main/dataset/raw_reads/reference.fasta"
@@ -25,7 +23,6 @@ wget -P "${data_dir}" "$ref_url"
 #QUALITY CONTROL
 mkdir -p fastqc_out
 for fq in "${data_dir}"/*.fastq.gz;do
-    #fastqc -i "${fq}" -o fastqc_out
     fastqc -f fastq -o fastqc_out "${fq}"
 done
 
