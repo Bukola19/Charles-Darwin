@@ -10,13 +10,13 @@ fastp
 bwa
 samtools
 bcftools
+
 **Modify Script**: Before running the script, make sure to modify the following variables in the script according to your requirements:
 
 ref_url: URL for the reference genome.
 ref_name: Desired filename for the reference genome.
 seq_urls: Array of sequence URLs.
-Run Script: Execute the script by running the following command in the terminal:
-./script.sh
+Run Script: Execute the script by running the following command in the terminal: ./script.sh
 
 **Output**
 The script will perform the following steps for each sequence:
