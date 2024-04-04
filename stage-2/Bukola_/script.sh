@@ -128,6 +128,6 @@ for url in "${seq_urls[@]}"; do
   samtools faidx "$ref_name"
   bcftools mpileup -Ou -f "$ref_name" "$name"/GenMapping/"$name".sorted.bam | bcftools call -mv -Ob -o "$name"/"$name".bcf
   bcftools view "$name"/"$name".bcf > "$name"/"$name.vcf
-  echo "Variant calling done for $name."
+
 done
   
