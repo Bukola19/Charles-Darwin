@@ -1,5 +1,6 @@
 # Abner requirements.txt
 
+wget
 FastQC
 FastP
 BWA
