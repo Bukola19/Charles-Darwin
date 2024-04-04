@@ -15,11 +15,11 @@ Make sure you have the following programs installed on your system before runnin
 
 ***Clone this repository to your system:***
 
-git clone https://github.com/your_username/your_project.git
+git clone https://github.com/Bukola19/Charles-Darwin/tree/96c794aed65362f1ebf563ca1062818acbcd27b8/stage-2/Abner
 
 ***Navigate to the project directory:***
 
-cd your_project
+cd Abner
 
 ***Run the bash script:***
 
