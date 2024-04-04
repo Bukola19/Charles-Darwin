@@ -1,4 +1,4 @@
-#!/usr/bin/env
+#!/usr/bin/env bash
 # make a new directory for the task titled PROJECT3 and change to the directory
 mkdir PROJECT3 && cd PROJECT3
 # make new directories Data, Ref, results and change to the Data directory
