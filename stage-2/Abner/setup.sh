@@ -1,6 +1,9 @@
 # Abner setup.sh
 
-# Install required tools
+# INSTALL REQUIRED TOOLS
+
+# Install wget for download files
+sudo apt-get install wget
 
 # Activate environment
 conda activate funtools
@@ -22,6 +25,7 @@ sudo apt-get install bcftools
 
 #If there is a problem with libopenblas
 sudo apt-get install libopenblas-base
+
 #If the result is: E: Unable to locate package libopenblas-base 
 # so run the next command and then install libopenblas-base again:
 sudo apt-get update
