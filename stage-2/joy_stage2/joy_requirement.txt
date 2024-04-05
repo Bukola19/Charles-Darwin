@@ -1,4 +1,5 @@
 #list of tools for NGS
+wget
 fastqc
 fastp
 bwa
