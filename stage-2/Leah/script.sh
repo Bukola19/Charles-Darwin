@@ -214,31 +214,42 @@ conda install bwa
 touch alignment_map
 conda install agbiome::bbtools
 nano alignment_map
- #!/bin/bash
-     SAMPLES=(
-  "ACBarrie"
-  "Alsen"
-  "Baxter"
-  "Chara"
-  "Drysdale"
-)
+#!/bin/bash
 
+# Define array of sample names
+SAMPLES=("ACBarrie" "Alsen" "Baxter" "Chara" "Drysdale")
+
+# Index the reference.fasta file
 bwa index references/reference.fasta
-mkdir repair
-mkdir alignmentt_mapp
 
+# Create directories if they don't exist
+mkdir -p repaired alignment_map results.sorted.bam
+
+# Iterate over each sample
 for SAMPLE in "${SAMPLES[@]}"; do
+    # Run repair.sh on paired-end trimmed reads
+    repair.sh in1="trimmed_reads/${SAMPLE}_R1.fastq.gz" \
+              in2="trimmed_reads/${SAMPLE}_R2.fastq.gz" \
+              out1="repaired/${SAMPLE}_R1_rep.fastq.gz" \
+              out2="repaired/${SAMPLE}_R2_rep.fastq.gz" \
+              outsingle="repaired/${SAMPLE}_single.fq"
+    
+    # Align repaired reads using BWA
+    bwa mem -t 1 references/reference.fasta \
+            "repaired/${SAMPLE}_R1_rep.fastq.gz" \
+            "repaired/${SAMPLE}_R2_rep.fastq.gz" \
+    | samtools view -b > "alignment_map/${SAMPLE}.bam"
+    
+    # Sort the alignment results
+    samtools sort "alignment_map/${SAMPLE}.bam" \
+                  -o "results.sorted.bam/${SAMPLE}.sorted.bam"
 
-    repair.sh in1="trimmed_reads/${SAMPLE}_R1.fastq.gz" in2="trimmed_reads/${SAMPLE}_R2.fastq.gz" out1="repaired/${SAMPLE}_R1_rep.fastq.gz" out2="repaired/${SAMPLE}_R2_rep.fastq.gz" outsingle="repaired/${SAMPLE}_single.fq"
-    echo $PWD
-    bwa mem -t 1 \
-    references/reference.fasta \
-    "repaired/${SAMPLE}_R1_rep.fastq.gz" "repaired/${SAMPLE}_R2_rep.fastq.gz" \
-  | samtools view -b \
-  > "alignment_map/${SAMPLE}.sorted.bam"
+    # Index the sorted BAM file
+    samtools index "results.sorted.bam/${SAMPLE}.sorted.bam"
 
-
-
+    # Generate flagstat for the sorted BAM file
+    samtools flagstat "results.sorted.bam/${SAMPLE}.sorted.bam" > "results.sorted.bam/${SAMPLE}.flagstat"
+done
 
 
 
