@@ -40,7 +40,7 @@ for url in "${seq_urls[@]}"; do
   echo "Created directories for quality control and mapping for $name."
   
 # Quality control for both R1 and R2 reads
- fastqc -i "${name}_R1.fastq.gz" "${name}_R2.fastq.gz" -o "$name"/QCReports
+ fastqc "${name}_R1.fastq.gz" "${name}_R2.fastq.gz" -o "$name"/QCReports
   echo "Performed quality control for $name."
 
 # Summarize QC results
