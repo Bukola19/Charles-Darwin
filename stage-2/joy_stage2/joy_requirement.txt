@@ -1,7 +1,7 @@
 #list of tools for NGS
-wget
-fastqc
-fastp
+wget 1.21.4 
+FastQC v0.12.1
+fastp 0.23.4
 bwa
-samtools
-bcftools
+samtools 1.6(Using htslib 1.6)
+bcftools 1.19 (Using htslib 1.19.1)
