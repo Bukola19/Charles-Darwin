@@ -19,7 +19,7 @@ conda install bioconda/label/cf201901::fastp
 #to install bwa for read mapping
 conda install bioconda::bwa
 
-#to install samtools for 
+#to install samtools for parsing and manipulating alignment in SAM/BAM format
 conda install bioconda/label/cf201901::samtools
 
 #to install bcftools for manipulating variant calling with vcf and bcf
