@@ -37,6 +37,8 @@ bwa index "$ref_name"
 bwa mem "$ref_name" "${name}_R1_trimmed.fastq.gz" "${name}_R2_trimmed.fastq.gz" > Mapping/"$name".sam
 samtools view -@ 10 -S -b Mapping/"$name".sam > Mapping/"$name".bam
 samtools sort -@ 10 -o Mapping/"$name".sorted.bam Mapping/"$name".bam
+samtools index Mapping/"$name".sorted.bam
+done
 
 
 
