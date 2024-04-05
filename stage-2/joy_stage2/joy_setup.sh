@@ -1,6 +1,6 @@
 # setup.sh
 #!/bin/bash
-#to download anaconda via command line
+#to download anaconda via the command line
 wget https://repo.continuum.io/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
 
 #to activate conda environment
@@ -8,6 +8,9 @@ conda create --name joy_stage2
 
 #to activate conda environment
 conda activate joy_stage2
+
+#to install wget to fetch and download datasets
+conda install wget
 
 #to install fastqc for quality control
 conda install bioconda::fastqc
