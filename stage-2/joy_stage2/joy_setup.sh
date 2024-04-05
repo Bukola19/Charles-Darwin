@@ -1,5 +1,5 @@
 # setup.sh
-#!bin/bash
+#!/bin/bash
 #to download anaconda via command line
 wget https://repo.continuum.io/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
 
