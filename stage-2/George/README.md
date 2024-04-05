@@ -1,5 +1,5 @@
 # THE WGS PIPELINE
-This pipeline is a snakemake execution of a bioinformatics protocol to process FASQT files
+This pipeline is a snakemake execution of a bioinformatics protocol to process FASTQ files
 
 **System requirements**
 - Linux distribution
