@@ -1,4 +1,4 @@
-# THE NGS PIPELINE
+# THE WGS PIPELINE
 This pipeline is a snakemake execution of a bioinformatics protocol to process FASQT files
 
 **System requirements**
@@ -17,11 +17,11 @@ This pipeline is a snakemake execution of a bioinformatics protocol to process F
 # How to run the pipeline:
 - With this version, clone this repository in your local environment
 
-  `git clone https://github.com/GeOdette/NGS_pipeline.git`
+  `git clone https://github.com/Bukola19/Charles-Darwin.git`
 
 - Next, install the necessary bioinformatics tools required for the pipeline. Use the `setup.sh` file at the base of the folder.
 
-  `bash ./setup.sh`
+  ` ./setup.sh`
 
 - Alternatively, you can look at the requirements.txt file and install the tools manually
   
@@ -36,7 +36,7 @@ This pipeline is a snakemake execution of a bioinformatics protocol to process F
 ## Running the pipeline
 - To run the pipeline, use the following code:
 - Ensure you activate your conda environment and have snakemake version 8 and above
-- Change into the project directory. Specifically, **NGS_pipeline**
+- Change into the project directory. Specifically, **George**
 
   `snakemake --profile config/`
 
