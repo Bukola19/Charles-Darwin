@@ -44,7 +44,7 @@ bwa index -a bwtsw "${reference}"
 mkdir -p bwa_output
 for map in "${SAMPLES[@]}"; do
     read1="${data_dir}/${map}_R1.trimmed.fastq.gz"
-    read2="${data_dir}/${map}_R2.fastq.gz"
+    read2="${data_dir}/${map}_R2.trimmed.fastq.gz"
     bwa_result="bwa_output/${map}.sam"
     bwa mem "${reference}" "${read1}" "${read2}" > "${bwa_result}"
     samtools view -hbo "bwa_output/${map}.bam" "bwa_output/${map}.sam"
