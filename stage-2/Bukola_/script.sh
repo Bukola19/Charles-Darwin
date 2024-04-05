@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-#activate the conda environment
-conda activate base
 # Define the URL for the reference genome and the desired filename
 ref_url="https://raw.githubusercontent.com/josoga2/yt-dataset/main/dataset/raw_reads/reference.fasta"
 ref_name="reference.fasta"
