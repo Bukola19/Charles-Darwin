@@ -1,6 +1,6 @@
 # setup.sh
-
-#to download anaconda via commandline
+#!bin/bash
+#to download anaconda via command line
 wget https://repo.continuum.io/archive/Anaconda3-2024.02-1-Linux-x86_64.sh
 
 #to activate conda environment
