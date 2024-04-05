@@ -24,3 +24,9 @@
 - data: data/fastq, data/ref data/fastq/trimmed_reads
 - multiqc_data
 - multiqc_report.html
+
+# How to run the pipeline on entirely different data
+- Locate the **ref_url** variable in `script.sh` and edit to your new reference genome URL
+- Locate the **data_url** variable in `script.sh` and edit to your new genome strands URL
+     - It works well on either one or multiple genome sequences
+     - Remember to separate each URL with a white space
