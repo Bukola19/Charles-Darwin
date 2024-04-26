@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Define the URL for the reference genome and the desired filename
 ref_url="https://raw.githubusercontent.com/josoga2/yt-dataset/main/dataset/raw_reads/reference.fasta"
 ref_name="reference.fasta"
@@ -39,7 +38,7 @@ for url in "${seq_urls[@]}"; do
   echo "Created directories for quality control and mapping for $name."
   
 # Quality control for both R1 and R2 reads
- fastqc -i "${name}_R1.fastq.gz" "${name}_R2.fastq.gz" -o "$name"/QCReports
+ fastqc "${name}_R1.fastq.gz" "${name}_R2.fastq.gz" -o "$name"/QCReports
   echo "Performed quality control for $name."
 
 # Summarize QC results

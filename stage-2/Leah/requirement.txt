@@ -3,6 +3,5 @@ Fastqc
 Fastp
 bwa
 samtools
-freebayes
 bcftools
 

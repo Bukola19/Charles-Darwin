@@ -19,6 +19,7 @@
 
 ## You should end up with the following subdirectories and files
 - BAMS
+- QC_Reports
 - SAM
 - VCF
 - data: data/fastq, data/ref data/fastq/trimmed_reads

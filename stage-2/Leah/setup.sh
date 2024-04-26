@@ -13,7 +13,5 @@ conda install multiqc
 conda install bwa
 # to install samtools (to check the mapping statistics)
 conda install samtools
-# to install freebayes for variant calling
-conda install freebayes
 # to install bcftools for manipulation of vcf.gz file
 conda install bcftools
